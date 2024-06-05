@@ -148,30 +148,21 @@
     errorBtns[13].addEventListener('click', (event) => {
       console.trace();
     });
-
-    // errorBtns[14] -- Trigger a Global Error
-    errorBtns[14].addEventListener('click', (event) => {
-      page.innerHTML = "";
-    });
     
     // STEP 3
     let input;
     try{
-      console.log("Reached the beginning of try.");
-      input = prompt("Enter a test phrase:", "Alpha Bravo Charlie and Delta");
+      console.log("Step3: Reached the beginning of try.");
+      input = prompt("Step3: Enter a test phrase:", "Alpha Bravo Charlie and Delta");
       console.log(nonExistentVariable);
-      console.log("This is the end of try.");
+      console.log("Step3: This is the end of try.");
     } catch(err){
       console.error(err);
     } finally {
-      console.log("Welcome to the finally block!");
-      console.log("Here's the test phrase you entered: ", input);
+      console.log("Step3: Welcome to the finally block!");
+      console.log("Step3: Here's the test phrase you entered: ", input);
     }
-
-    
-
-    
-                        
+                
     // step 4
     class DupeError extends Error {
       constructor(message) {
@@ -204,14 +195,13 @@
         console.log(err.stack); // a list of nested calls with line numbers for each
       }finally{
         if(bResult){
-          console.log("Trigger a Global Error: The entered values are duplicates.");
+          console.log("Trigger a Global Error: The passed values are duplicates.");
         }else{
-          console.log("Trigger a Global Error: The entered values are not duplicates.");
+          console.log("Trigger a Global Error: The passed values are not duplicates.");
         }
       }
     });
     
-
 
   </script>
 </body>
