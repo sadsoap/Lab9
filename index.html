@@ -46,6 +46,7 @@
       <button>Console Trace</button>
       <button>Trigger a Global Error</button>
     </section>
+    <p id="pageText"></p>
   </main>
 
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
@@ -71,9 +72,105 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
-
-    console.log("I'm here!!");
+    console.log("I'm here!! A student cooked here. (I hope.)");
     TrackJS.track('Testing TrackJS!');
+
+    // STEP 2
+    // errorBtns[0]  -- Console log
+    errorBtns[0].addEventListener('click', (event) => {
+      console.log("Console Log: This button was clicked!");
+    });
+
+    // errorBtns[1]  -- Console Error
+    errorBtns[1].addEventListener('click', (event) => {
+      console.error("Console Error: This is an error message");
+    });
+
+    // errorBtns[2]  -- Console Count
+    errorBtns[2].addEventListener('click', (event) => {
+      console.count("Console Count: This button's click count");
+    });
+
+    // errorBtns[3]  -- Console Warn
+    errorBtns[3].addEventListener('click', (event) => {
+      console.warn("Console Warn: This is a warning!");
+    });
+
+    // errorBtns[4]  -- Console Assert
+    errorBtns[4].addEventListener('click', (event) => {
+      console.assert(false, "Assertion was false, no message if true");
+    });
+
+    // errorBtns[5]  -- Console Clear
+    errorBtns[5].addEventListener('click', (event) => {
+      console.clear();
+      console.log("Console Clear: Console was cleared above.");
+    });
+
+    // errorBtns[6]  -- Console Dir
+    errorBtns[6].addEventListener('click', (event) => {
+      console.dir(form);
+      console.log("Console Dir: form element was passed above.");
+    });
+
+    // errorBtns[7]  -- Console dirxml
+    errorBtns[7].addEventListener('click', (event) => {
+      console.dirxml(form);
+      console.log("Console dirxml: form element was passed above.");
+    });
+
+    // errorBtns[8]  -- Console Group Start
+    errorBtns[8].addEventListener('click', (event) => {
+      console.group('Console Group Start: Group created. Click to toggle view.');
+    });
+
+    // errorBtns[9]  -- Console Group End
+    errorBtns[9].addEventListener('click', (event) => {
+      console.groupEnd();
+    });
+
+    // errorBtns[10] -- Console Table
+    errorBtns[10].addEventListener('click', (event) => {
+      console.table(["Console Table:","This", "is", "a","Table"]);
+    });
+
+    // errorBtns[11] -- Start Timer
+    errorBtns[11].addEventListener('click', (event) => {
+      console.time();
+    });
+
+    // errorBtns[12] -- End Timer
+    errorBtns[12].addEventListener('click', (event) => {
+      console.timeEnd();
+    });
+
+    // errorBtns[13] -- Console Trace
+    errorBtns[13].addEventListener('click', (event) => {
+      console.trace();
+    });
+
+    // errorBtns[14] -- Trigger a Global Error
+    errorBtns[14].addEventListener('click', (event) => {
+      page.innerHTML = "";
+    });
+    
+    // STEP 3
+    let input;
+    try{
+      console.log("Reached the beginning of try.");
+      input = prompt("Enter a test phrase:", "Alpha Bravo Charlie and Delta");
+      console.log(nonExistentVariable);
+      console.log("This is the end of try.");
+    } catch(err){
+      console.error(err);
+    } finally {
+      console.log("Welcome to the finally block!");
+      console.log("Here's the test phrase you entered: ", input);
+    }
+
+    
+
+    
                         
     // step 4
     class DupeError extends Error {
