@@ -104,7 +104,6 @@
         bResult = isDuplicate("green", "blue");
       } catch(err) {
         console.error(err.message); // Uh oh, there was an error!
-        console.log(err.name); // DupeError
         console.log(err.stack); // a list of nested calls with line numbers for each
       }finally{
         if(bResult){
