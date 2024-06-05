@@ -87,20 +87,25 @@
       
     }
 
-    let bResult;
-    try {
-      bResult = isDuplicate("green", "blue");
-    } catch(err) {
-      console.error(err.message); // Uh oh, there was an error!
-      console.log(err.name); // DupeError
-      console.log(err.stack); // a list of nested calls with line numbers for each
-    }finally{
-      if(bResult){
-        console.log("The entered values are duplicates.");
-      }else{
-        console.log("The entered values are not duplicates.");
+    //Step 5 -- Trigger a Global Error
+    errorBtns[14].addEventListener('click', (event)=>{
+      let bResult;
+      try {
+        bResult = isDuplicate("green", "blue");
+      } catch(err) {
+        console.error(err.message); // Uh oh, there was an error!
+        console.log(err.name); // DupeError
+        console.log(err.stack); // a list of nested calls with line numbers for each
+      }finally{
+        if(bResult){
+          console.log("Trigger a Global Error: The entered values are duplicates.");
+        }else{
+          console.log("Trigger a Global Error: The entered values are not duplicates.");
+        }
       }
-    }
+    });
+    
+
 
   </script>
 </body>
