@@ -48,6 +48,14 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "a2c6ebbb5808483791a46ba1d6d70a31"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+                        
   <script>
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
@@ -65,6 +73,8 @@
     // You may move this JS to another file if you wish
 
     console.log("I'm here!!");
+    TrackJS.track('Testing TrackJS!');
+                        
     // step 4
     class DupeError extends Error {
       constructor(message) {
