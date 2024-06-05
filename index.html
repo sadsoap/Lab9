@@ -64,6 +64,43 @@
     // You may move this JS to another file if you wish
 
     console.log("I'm here!!");
+    // step 4
+    class DupeError extends Error {
+      constructor(message) {
+        super(message); // (1)
+        this.name = "DupeError"; // (2)
+      }
+    }
+
+    function isDuplicate(string1, string2) {
+      let alpha = "";
+      alpha = string1;
+      let bravo = "";
+      bravo = string2;
+
+      if(alpha === bravo){
+        return true;
+      }else{
+        throw new DupeError("Uh oh, there was an error!");
+      }
+      
+    }
+
+    let bResult;
+    try {
+      bResult = isDuplicate();
+    } catch(err) {
+      console.error(err.message); // Uh oh, there was an error!
+      alert(err.name); // DupeError
+      alert(err.stack); // a list of nested calls with line numbers for each
+    }finally{
+      if(bResult){
+        console.log("The entered values are duplicates.");
+      }else{
+        console.log("The entered values are not duplicates.");
+      }
+    }
+
   </script>
 </body>
 

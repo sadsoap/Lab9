@@ -21,7 +21,7 @@ button {
   }
 
   main {
-    width: 800px;
+    width: auto;
   }
 
   #error-btns {
