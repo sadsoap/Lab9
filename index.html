@@ -92,8 +92,8 @@
       bResult = isDuplicate("green", "blue");
     } catch(err) {
       console.error(err.message); // Uh oh, there was an error!
-      alert(err.name); // DupeError
-      alert(err.stack); // a list of nested calls with line numbers for each
+      console.log(err.name); // DupeError
+      console.log(err.stack); // a list of nested calls with line numbers for each
     }finally{
       if(bResult){
         console.log("The entered values are duplicates.");
